@@ -1,5 +1,6 @@
 package com.example.webecom.services.auth;
 
+import com.example.webecom.dto.LoginRequest;
 import com.example.webecom.dto.SignUpRequest;
 import com.example.webecom.dto.UserDto;
 import com.example.webecom.entity.User;
@@ -16,6 +17,8 @@ import java.util.*;
 public class AuthServiceImpl implements AuthService {
     private final UserRepository userRepository;
 
+
+
     @Override
     public UserDto creataCustomer(SignUpRequest signUpRequest) {
         User user = new User();
@@ -30,6 +33,22 @@ public class AuthServiceImpl implements AuthService {
         return userDto;
     }
 
+    public User findByEmail(LoginRequest loginRequest){
+        return userRepository.findByEmail(loginRequest.getEmail());
+    }
+
+    @Override
+    public UserDto loginCustomer(LoginRequest loginRequest){
+        User user = findByEmail(loginRequest);
+        if(loginRequest.getPassword().equals(user.getPassword())){
+            UserDto userDto = new UserDto();
+            userDto.setId(user.getId());
+            userDto.setEmail(user.getEmail());
+            return userDto;
+        }
+        return null;
+
+    }
 
     public ResponseEntity<?> showAllCustomer(){
         List<User> users = userRepository.findAll();

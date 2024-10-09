@@ -1,9 +1,9 @@
 package com.example.webecom.controller;
 
+import com.example.webecom.dto.LoginRequest;
 import com.example.webecom.dto.SignUpRequest;
 import com.example.webecom.dto.UserDto;
 import com.example.webecom.entity.ResponseMessage;
-import com.example.webecom.entity.User;
 import com.example.webecom.services.auth.AuthService;
 import com.example.webecom.services.auth.AuthServiceImpl;
 import jakarta.validation.Valid;
@@ -31,6 +31,16 @@ public class AuthController {
         }
         return ResponseEntity.ok(new ResponseMessage("Created Success"));
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> loginCustomer(@Valid @RequestBody LoginRequest loginRequest){
+        UserDto loginCustomerDto = authService.loginCustomer(loginRequest);
+        if(loginCustomerDto == null){
+            return new ResponseEntity<>("Login Fail!", HttpStatus.UNAUTHORIZED);
+        }
+        return ResponseEntity.ok(new ResponseMessage("Login Success"));
+    }
+
 
     @GetMapping("/showAllCustomer")
     public ResponseEntity<?> showAllCustomer(){
