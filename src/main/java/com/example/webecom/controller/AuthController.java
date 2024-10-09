@@ -25,7 +25,7 @@ public class AuthController {
 
     @PostMapping("/signup")
     public ResponseEntity<?> signupCustomer(@Valid @RequestBody SignUpRequest signUpRequest){
-        UserDto createdCustomerDto = authService.creataCustomer(signUpRequest);
+        UserDto createdCustomerDto = authService.createCustomer(signUpRequest);
         if(createdCustomerDto == null){
             return new ResponseEntity<>("Customer not create", HttpStatus.BAD_REQUEST);
         }
