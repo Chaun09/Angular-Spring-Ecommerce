@@ -3,8 +3,10 @@ package com.example.webecom.services.auth;
 import com.example.webecom.dto.LoginRequest;
 import com.example.webecom.dto.SignUpRequest;
 import com.example.webecom.dto.UserDto;
+import com.example.webecom.entity.Product;
 import com.example.webecom.entity.User;
 import com.example.webecom.enums.UserRole;
+import com.example.webecom.repository.ProductRepository;
 import com.example.webecom.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -16,6 +18,7 @@ import java.util.*;
 @RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {
     private final UserRepository userRepository;
+    private final ProductRepository productRepository;
 
 
 
@@ -50,10 +53,19 @@ public class AuthServiceImpl implements AuthService {
 
     }
 
+    public ResponseEntity<?> showAllProduct(){
+        List<Product> products = productRepository.findAll();
+        if(products.isEmpty())
+            return new ResponseEntity<>("No Person Found", HttpStatus.NOT_FOUND);
+        return ResponseEntity.ok(products);
+    }
+
+
+
     public ResponseEntity<?> showAllCustomer(){
         List<User> users = userRepository.findAll();
         if(users.isEmpty())
-            return new ResponseEntity<>("No Person Found", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("No Product Found", HttpStatus.NOT_FOUND);
         return ResponseEntity.ok(users);
     }
 

@@ -62,6 +62,11 @@ public class AuthController {
         return authServe.updateCustomer(id,userDto);
     }
 
+    @GetMapping("/showAllProduct")
+    public ResponseEntity<?> showAllProduct(){
+        return authServe.showAllProduct();
+    }
+
 
 
 

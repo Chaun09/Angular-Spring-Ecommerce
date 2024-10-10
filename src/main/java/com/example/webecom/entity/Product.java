@@ -2,6 +2,7 @@ package com.example.webecom.entity;
 
 import com.example.webecom.enums.UserRole;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 
@@ -18,11 +19,16 @@ public class Product {
     private Long id;
     @Column(unique=true)
     private String name;
-    @Column(unique=true)
-    private String price;
-    private String quantity;
-    private String feedback;
+    @NotNull
+    private Float price;
+    @NotNull
+    private Integer quantity;
+
+    private String description;
     private String file_pic;
+    @NotNull
+    private Float old_price;
+
 
 
 }
