@@ -1,5 +1,6 @@
 package com.example.webecom.controller;
 import com.example.webecom.services.auth.AuthServiceImpl;
+import com.example.webecom.services.auth.ProducService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,10 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/{api_prefix}")
 @RequiredArgsConstructor
 public class ProductController {
-    private final AuthServiceImpl authServe;
+    private final ProducService producService;
     @GetMapping("/showAllProduct")
     public ResponseEntity<?> showAllProduct(){
-        return authServe.showAllProduct();
+        return producService.showAllProduct();
     }
 
 }
