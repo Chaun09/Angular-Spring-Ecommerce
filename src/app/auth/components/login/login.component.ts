@@ -8,20 +8,38 @@ import { FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-
-
   loginForm: FormGroup;
 
-
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
     // Đảm bảo form được khởi tạo đúng cách
     this.loginForm = new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(8)])
+      password: new FormControl('', [
+        Validators.required
+      ]),
     });
+  }
+
+  onSubmit() {
+    if (this.loginForm.valid) {
+      this.authService.signUp(this.loginForm.value).subscribe({
+        next: () => {
+          this.router.navigate(['/home']);
+          alert('Đăng nhập thành công')
+        },
+        error: (error) => {
+          console.error('Login failed', error);
+        },
+      });
+    } else {
+      console.error('Form không hợp lệ', this.loginForm.errors);
+    }
   }
 }

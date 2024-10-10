@@ -45,7 +45,11 @@
                 </div>
 
                 <div class="input-box">
-                  <form class="row g-4" [formGroup]="loginForm">
+                  <form
+                    class="row g-4"
+                    [formGroup]="loginForm"
+                    (ngSubmit)="onSubmit()"
+                  >
                     <div class="col-12">
                       <div class="form-floating theme-form-floating">
                         <input

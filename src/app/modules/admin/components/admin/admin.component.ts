@@ -42,7 +42,7 @@ export class AdminDashboardComponent implements OnInit {
     this.AdminService.deleteAllCustomer(id).subscribe({
       next: (response) => {
         console.log('Xóa thành công:', response);
-        // Thực hiện các hành động khác sau khi xóa thành công, ví dụ: load lại danh sách
+
       },
       error: (error) => {
         console.error('Có lỗi xảy ra khi xóa:', error);

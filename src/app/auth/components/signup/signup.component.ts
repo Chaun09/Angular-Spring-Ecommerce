@@ -31,9 +31,11 @@ export class SignupComponent {
       this.authService.signUp(this.signUpForm.value).subscribe({
         next: (response) => {
 
-          this.router.navigate(['/login']);
 
-          console.log('Sign up successful', response);
+          this.router.navigate(['/login']);
+          alert("Đăng kí thành công");
+
+
         },
         error: (error) => {
           console.error('Sign up failed', error);

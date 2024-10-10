@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './auth/components/login/login.component';
 import { AdminService } from './modules/admin/services/admin.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './modules/customer/header/header.component';
+import { FooterComponent } from './modules/customer/footer/footer.component';
+import { MidFooterComponent } from './modules/customer/mid-footer/mid-footer.component';
 
 
 
@@ -19,15 +22,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
 
     AppComponent,
-
-
-
-
-
-    CustomerComponent,
-
     SignupComponent,
     LoginComponent
+
   ],
   imports: [
     FormsModule,

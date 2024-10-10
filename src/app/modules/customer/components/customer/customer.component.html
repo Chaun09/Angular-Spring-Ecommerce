@@ -1,1 +1,41 @@
-<p>customer works!</p>
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-md-6" *ngFor="let products of products">
+      <div class="product-item">
+        <img src="{{ products.file_pic }}" alt="abc" class="product-image" />
+        <div>
+          <div class="d-flex justify-content-center">
+            <h3 class="product-name">{{ products.name }}</h3>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <p class="product-price">
+              Giá: <del> {{ products.old_price }} $</del> {{ products.price }} $
+            </p>
+          </div>
+
+          <div class="product-rating d-flex justify-content-center">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+        </div>
+        <div class="product-action">
+          <button class="btn">
+            <i class="btn-icon fa-solid fa-cart-shopping"></i>
+          </button>
+          <button class="btn-buy ms-2">Mua ngay</button>
+          <button class="btn btn-heart">
+            <i class="fa-solid fa-heart"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-mid-footer></app-mid-footer>
+<app-footer></app-footer>
