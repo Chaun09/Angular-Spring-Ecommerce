@@ -1,14 +1,12 @@
 package com.example.webecom.entity;
 
-import com.example.webecom.enums.UserRole;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
-
 @Entity
 @Data
-@Table(name="products")
+@Table(name = "products")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -17,7 +15,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(unique=true)
+    @Column(unique = true)
     private String name;
     @NotNull
     private Float price;
@@ -28,7 +26,5 @@ public class Product {
     private String file_pic;
     @NotNull
     private Float old_price;
-
-
 
 }
