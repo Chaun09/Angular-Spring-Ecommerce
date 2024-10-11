@@ -6,19 +6,16 @@ import com.example.webecom.dto.UserDto;
 import com.example.webecom.entity.Product;
 import com.example.webecom.entity.User;
 import com.example.webecom.enums.UserRole;
-import com.example.webecom.repository.ProductRepository;
 import com.example.webecom.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import java.util.*;
+
 
 @Service
 @RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {
     private final UserRepository userRepository;
-    private final ProductRepository productRepository;
+
 
 
 
