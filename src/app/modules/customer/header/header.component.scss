@@ -1,6 +1,9 @@
 header{
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgb(19, 23, 42);
     color: rgb(173, 178, 203);
+    position: sticky;
+  
+
 }
 .navbar {
     background-color: rgba(0, 0, 0, 0) !important;
@@ -18,6 +21,7 @@ header{
     color: rgb(173, 178, 203);
     border-radius: 18px;
     padding: 8px 16px;
+    margin-right: 23px;
 }
 
 .navbar .container .navbar-nav .nav-link.active {

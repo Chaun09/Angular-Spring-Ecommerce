@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './modules/customer/header/header.component';
 import { FooterComponent } from './modules/customer/footer/footer.component';
 import { MidFooterComponent } from './modules/customer/mid-footer/mid-footer.component';
+import { MidHeadFooterComponent } from './modules/customer/mid-head-footer/mid-head-footer.component';
 
 
 
@@ -31,8 +32,9 @@ import { MidFooterComponent } from './modules/customer/mid-footer/mid-footer.com
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
-  ],
+    ReactiveFormsModule,
+    HeaderComponent
+],
   providers: [AdminService],
   bootstrap: [AppComponent]
 })

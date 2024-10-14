@@ -29,13 +29,9 @@ export class SignupComponent {
   onSubmit() {
     if (this.signUpForm.valid) {
       this.authService.signUp(this.signUpForm.value).subscribe({
-        next: (response) => {
-
-
+        next: () => {
           this.router.navigate(['/login']);
           alert("Đăng kí thành công");
-
-
         },
         error: (error) => {
           console.error('Sign up failed', error);

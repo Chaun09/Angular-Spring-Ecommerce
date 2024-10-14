@@ -10,6 +10,6 @@ export class CustomerService {
   private baseUrl = 'http://localhost:8080/api';
   constructor(private http: HttpClient) { }
   showAllProducts(): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/showAllProduct`);
+    return this.http.get<any>(`${this.baseUrl}/show_All_Product`);
   }
 }

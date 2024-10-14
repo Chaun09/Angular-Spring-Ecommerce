@@ -4,6 +4,7 @@ import { FooterComponent } from '../../footer/footer.component';
 import { HeaderComponent } from '../../header/header.component';
 import { MidFooterComponent } from '../../mid-footer/mid-footer.component';
 import { NgFor } from '@angular/common';
+import { MidHeadFooterComponent } from '../../mid-head-footer/mid-head-footer.component';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { NgFor } from '@angular/common';
     FooterComponent,
     HeaderComponent,
     MidFooterComponent,
+    MidHeadFooterComponent,
     NgFor
 
   ],
