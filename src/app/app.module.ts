@@ -3,18 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { AdminComponent } from './modules/admin/admin/admin.component';
-import { CustomerComponent } from './modules/customer/components/customer/customer.component';
-// import { HomeComponent } from './home/home/home.component';
+
 import { SignupComponent } from './auth/components/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './auth/components/login/login.component';
 import { AdminService } from './modules/admin/services/admin.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './modules/customer/header/header.component';
-import { FooterComponent } from './modules/customer/footer/footer.component';
-import { MidFooterComponent } from './modules/customer/mid-footer/mid-footer.component';
+import { FaqComponent } from './faq/faq.component';
 import { MidHeadFooterComponent } from './modules/customer/mid-head-footer/mid-head-footer.component';
+import { FooterComponent } from './modules/customer/footer/footer.component';
+
+
+
 
 
 
@@ -24,7 +25,9 @@ import { MidHeadFooterComponent } from './modules/customer/mid-head-footer/mid-h
 
     AppComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    FaqComponent
+
 
   ],
   imports: [
@@ -33,8 +36,12 @@ import { MidHeadFooterComponent } from './modules/customer/mid-head-footer/mid-h
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    HeaderComponent
-],
+    HeaderComponent,
+    MidHeadFooterComponent,
+    FooterComponent
+
+
+  ],
   providers: [AdminService],
   bootstrap: [AppComponent]
 })

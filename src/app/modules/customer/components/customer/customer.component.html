@@ -1,44 +1,59 @@
 <br />
-<br />
+<app-mid-header></app-mid-header>
 
-<div class="container">
+<div class="container mt-5">
   <div class="row">
-    <div class="col-lg-3 col-md-6" *ngFor="let products of products">
+    <div class="col-lg-3 col-md-6 mb-4" *ngFor="let products of products">
       <div class="product-item">
-        <img src="{{ products.file_pic }}" alt="abc" class="product-image" />
-        <div>
-          <div class="d-flex justify-content-center">
-            <h3 class="product-name">{{ products.name }}</h3>
-          </div>
-
-          <div class="d-flex justify-content-center">
-            <p class="product-price">
-              Giá: <del> {{ products.old_price }} $</del> {{ products.price }} $
-            </p>
-          </div>
-
-          <div class="product-rating d-flex justify-content-center">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-          </div>
-        </div>
-        <div class="product-action">
-          <button class="btn">
-            <i class="btn-icon fa-solid fa-cart-shopping"></i>
+        <img
+          src="{{ products.file_pic }}"
+          alt="Product Image"
+          class="product-image"
+        />
+        <h5 class="product-name">{{ products.name }}</h5>
+        <p class="product-price">
+          <span class="price-old">{{ products.old_price }}$</span>
+          <span class="price-new">{{ products.price }}$</span>
+        </p>
+        <div class="d-flex justify-content-center align-items-center mb-2">
+          <button
+            class="btn btn-outline-secondary qty-left-minus"
+            data-type="minus"
+            data-field=""
+          >
+            <i class="fas fa-minus"></i>
           </button>
-          <button class="btn-buy ms-2">Mua ngay</button>
-          <button class="btn btn-heart">
-            <i class="fa-solid fa-heart"></i>
+          <input
+            class="form-control text-center qty-input"
+            type="text"
+            name="quantity"
+            value="1"
+            style="width: 50px; margin: 0 5px"
+          />
+          <button
+            class="btn btn-outline-secondary qty-right-plus"
+            data-type="plus"
+            data-field=""
+          >
+            <i class="fas fa-plus"></i>
           </button>
         </div>
+        <button class="btn btn-add-cart">
+          <i class="fas fa-shopping-cart"></i> Add to Cart
+        </button>
+        <button class="btn btn-favorite ms-2">
+          <i class="fas fa-heart"></i>
+        </button>
       </div>
     </div>
+
+    <!-- Thêm nhiều sản phẩm hơn nếu cần -->
   </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 <app-mid-footer></app-mid-footer>
 <app-mid-head-footer></app-mid-head-footer>
-<app-footer></app-footer>
