@@ -1,0 +1,115 @@
+<div
+  class="product"
+  style="border: 5px black solid; padding: 20px"
+  *ngIf="product"
+>
+  <div class="row">
+    <!-- Hình ảnh sản phẩm -->
+    <div class="col-md-5">
+      <ul class="prod-slider">
+        <li style="background-image: url({{ product.file_pic }})">
+          <a class="popup" href="{{ product.file_pic }}"></a>
+        </li>
+        <li style="background-image: url({{ product.file_pic }})">
+          <a class="popup" href="{{ product.file_pic }}"></a>
+        </li>
+        <li style="background-image: url({{ product.file_pic }})">
+          <a class="popup" href="{{ product.file_pic }}"></a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Chi tiết sản phẩm -->
+    <div class="col-md-7">
+      <div class="p-title">
+        <h2 style="font-size: 30px">
+          {{ product.name }}
+        </h2>
+      </div>
+
+      <div class="p-short-des">
+        <p>
+          {{ product.description }}
+        </p>
+      </div>
+
+      <!-- Chọn màu và số lượng -->
+      <form action="" method="post">
+        <div class="p-quantity">
+          <div class="row" style="display: flex; padding: 5px">
+            <div class="col-md-12 mb_20">
+              Select Size <br />
+              <select
+                name="size_id"
+                class="form-control select2"
+                style="width: auto"
+              >
+                <option value="26">Free Size</option>
+              </select>
+            </div>
+
+            <div class="col-md-12">
+              Select Color <br />
+              <select
+                name="color_id"
+                class="form-control select2"
+                style="width: auto"
+              >
+                <option value="2">Black</option>
+                <option value="6">White</option>
+                <option value="17">Gray</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Giá sản phẩm -->
+        <div class="p-price">
+          <span style="font-size: 30px">
+            <del>{{ product.old_price }}$</del> {{ product.price }}$
+          </span>
+        </div>
+
+        <!-- Chọn số lượng và thêm vào giỏ hàng -->
+        <div class="p-quantity">
+          Quantity <br />
+          <input
+            type="number"
+            class="input-text qty"
+            step="1"
+            min="1"
+            name="p_qty"
+            value="1"
+            title="Qty"
+            size="4"
+            pattern="[0-9]*"
+            inputmode="numeric"
+          />
+        </div>
+
+        <div class="btn-cart btn-cart1">
+          <input type="submit" value="Add to Cart" name="form_add_to_cart" />
+        </div>
+      </form>
+
+      <!-- Chia sẻ sản phẩm -->
+      <div class="share">
+        <h4>Share This Product</h4>
+        <div class="share-buttons">
+          <a href="#" class="share-btn facebook" title="Share on Facebook">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </a>
+          <a href="#" class="share-btn twitter" title="Share on Twitter">
+            <i class="fab fa-twitter"></i> Twitter
+          </a>
+          <a href="#" class="share-btn linkedin" title="Share on LinkedIn">
+            <i class="fab fa-linkedin-in"></i> LinkedIn
+          </a>
+          <a href="#" class="share-btn pinterest" title="Share on Pinterest">
+            <i class="fab fa-pinterest"></i> Pinterest
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

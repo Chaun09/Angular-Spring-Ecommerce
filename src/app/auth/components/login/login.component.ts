@@ -31,8 +31,9 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.authService.signUp(this.loginForm.value).subscribe({
         next: () => {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/loading']);
           alert('Đăng nhập thành công')
+
         },
         error: (error) => {
           console.error('Login failed', error);

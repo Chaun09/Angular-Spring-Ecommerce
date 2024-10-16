@@ -13,6 +13,12 @@ import { HeaderComponent } from './modules/customer/header/header.component';
 import { FaqComponent } from './faq/faq.component';
 import { MidHeadFooterComponent } from './modules/customer/mid-head-footer/mid-head-footer.component';
 import { FooterComponent } from './modules/customer/footer/footer.component';
+import { LoadingPageComponent } from './loading-page/loading-page.component';
+import { BodyCustomerComponent } from './modules/customer/body-customer/body-customer.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactComponent } from './contact/contact.component';
+import { MidFooterComponent } from "./modules/customer/mid-footer/mid-footer.component";
 
 
 
@@ -26,9 +32,11 @@ import { FooterComponent } from './modules/customer/footer/footer.component';
     AppComponent,
     SignupComponent,
     LoginComponent,
-    FaqComponent
-
-
+    FaqComponent,
+    LoadingPageComponent,
+    ProductDetailComponent,
+    AboutUsComponent,
+    ContactComponent
   ],
   imports: [
     FormsModule,
@@ -38,10 +46,10 @@ import { FooterComponent } from './modules/customer/footer/footer.component';
     ReactiveFormsModule,
     HeaderComponent,
     MidHeadFooterComponent,
-    FooterComponent
-
-
-  ],
+    FooterComponent,
+    BodyCustomerComponent,
+    MidFooterComponent
+],
   providers: [AdminService],
   bootstrap: [AppComponent]
 })

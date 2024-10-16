@@ -1,0 +1,30 @@
+<div class="product-grid">
+  <div class="product-card" *ngFor="let products of products">
+    <div class="product-image">
+      <img src="{{ products.file_pic }}" alt="Products" />
+      <div class="product-icons">
+        <a [routerLink]="['/detail', products.id]"><i class="fa fa-eye"></i></a>
+        <a><i class="fa fa-refresh"></i></a>
+        <a><i class="fa fa-heart"></i></a>
+      </div>
+    </div>
+    <div class="product-details">
+      <h4>{{ products.name }}</h4>
+      <div class="product-price">
+        <span class="price">{{ products.price }}$</span>
+        <span class="old-price">{{ products.old_price }}$</span>
+      </div>
+      <div class="product-rating">
+        <span>★★★★☆</span>
+        <span class="stock-status">I{{ products.quantity }}</span>
+      </div>
+      <div class="add-to-cart">
+        <button class="add-btn">
+          <i class="fa-solid fa-cart-shopping"></i>Add
+        </button>
+        <button class="add-more-btn"><i class="fa fa-heart"></i></button>
+      </div>
+    </div>
+  </div>
+  <!-- Repeat for other products -->
+</div>
